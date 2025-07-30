@@ -1,0 +1,50 @@
+import {olg} from "./proline"
+import {theme1} from "./reads"
+
+import {commonInit} from "./common"
+
+
+
+
+
+function init(){	
+	const tl = commonInit()
+
+	
+
+	tl.add("f2", "+=.5")
+	const ok = ["300x250", "160x600", "300x600"]
+	if(ok.includes(universalBanner.size)){
+		tl.from([".f2_hero", ".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], {duration:.3, opacity:0}, "f2")	
+		tl.to(".f1", {duration:.5, opacity:0}, "f2")
+	}
+	
+	
+	tl.from(".f2_device", {duration:.5, opacity:0}, "f2")
+
+	tl.from(".f2_txt", {duration:.5, opacity:0}, "f2")
+
+	tl.add("f3", `+=${theme1.t1}`)
+	tl.to(".f2_txt", {duration:.3, opacity:0}, "f3")
+	tl.from(".f3_txt", {duration:.3, opacity:0})
+
+
+	tl.add("f4", `+=${theme1.t2}`)
+	tl.from(".f4_bg", {duration:.3, opacity:0}, "f4")
+
+	tl.from(".f4_device", {duration:.3, opacity:0})
+	tl.from(".f4_txt", {duration:.3, opacity:0})
+	tl.from(".f4_cta", {duration:.3, opacity:0})
+
+	
+
+	
+	tl.add(olg())
+	
+	return tl
+}
+
+
+ 
+
+export { init  }

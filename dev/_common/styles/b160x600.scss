@@ -7,13 +7,6 @@
  height: 600px;
 }
 
-#olg{
-	width: 87px;
-	height: 49px;
-	@include pos(0, 555);
-	// opacity: .5 !important;
-	
-}
 
 
 
@@ -24,19 +17,10 @@
 	// opacity: 1;
 }
 
-
-.ypy-all{
-	// opacity: ;
-	@include pos-scale(3, 341, 1.03);
-	
+#svg_move, #svg_idle{
+	@include pos(-7, 540);
 }
-
-
-
-.logo{	
-	@include pos(0, 0);
-	width: 82px;	
-	bottom:-3px;
-	left:0;
+#olg_main{		
+	width: 89px;	
 }
 

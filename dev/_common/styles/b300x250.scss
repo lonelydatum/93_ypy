@@ -13,10 +13,10 @@
 }
 
  
-.logo{	
-	@include pos(0, 0);
-	width: 82px;	
-	bottom:-3px;
-	left:0;
+#svg_move, #svg_idle{
+	@include pos(-10, 203);
+}
+#olg_main{		
+	width: 74px;	
 }
 

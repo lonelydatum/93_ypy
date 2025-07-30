@@ -23,18 +23,10 @@
  
 
 
-.logo{	
-	
-	width: 104px;	
-	
+#svg_move, #svg_idle{
+	@include pos(-11, 17);
 }
-
-
-
-svg#fire{
-	@include pos-scale(68, -21, 0);
-	width: 19px;	
-	
+#olg_main{		
+	width: 110px;	
 }
-
 

@@ -33,16 +33,10 @@
 }
 
 
-svg#fire{
-	@include pos-scale(34, -13, 0);
-	width: 12px;	
-	
+#svg_move, #svg_idle{
+	@include pos(-5, 15);	
+}
+#olg_main{		
+	width: 55px;	
 }
 
-
-
-.logo{	
-	
-	width: 54px;	
-	
-}
