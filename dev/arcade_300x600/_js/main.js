@@ -1,4 +1,4 @@
-import {init} from '../../_common/js/ypy_games.js'
+import {init} from '../../_common/js/ypy_arcade.js'
 
  
 init()

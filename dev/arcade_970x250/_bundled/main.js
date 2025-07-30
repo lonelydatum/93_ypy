@@ -37,8 +37,14 @@ var theme1 = {
 	t2: 2
 };
 
+var arcade = {
+	t1: 1.8,
+	t2: 2
+};
+
 exports.games = games;
 exports.theme1 = theme1;
+exports.arcade = arcade;
 
 },{}],3:[function(require,module,exports){
 'use strict';
@@ -49,7 +55,7 @@ var _commonJsCommonJs = require('../../_common/js/common.js');
 
 var tl = new _commonJsCommonJs.commonInit();
 
-tl.add("f2", "+=.5");
+tl.add("f2", "+=.1");
 
 tl.from(".f2_txt", { duration: .5, opacity: 0 }, "f2");
 

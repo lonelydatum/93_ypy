@@ -75,8 +75,14 @@ var theme1 = {
 	t2: 2
 };
 
+var arcade = {
+	t1: 1.8,
+	t2: 2
+};
+
 exports.games = games;
 exports.theme1 = theme1;
+exports.arcade = arcade;
 
 },{}],4:[function(require,module,exports){
 'use strict';
@@ -98,11 +104,11 @@ function init() {
 
 	tl.from(".f2_txt", { duration: .3, opacity: 0 });
 
-	tl.add("f3", '+=' + _commonJsReadsJs.games.t1);
+	tl.add("f3", '+=' + _commonJsReadsJs.arcade.t1);
 	tl.to(".f2_txt", { duration: .3, opacity: 0 }, "f3");
 	tl.from(".f3_txt", { duration: .3, opacity: 0 });
 
-	tl.add("f4", '+=' + _commonJsReadsJs.games.t2);
+	tl.add("f4", '+=' + _commonJsReadsJs.arcade.t2);
 	tl.to(".f3_txt", { duration: .3, opacity: 0 }, "f4");
 
 	tl.from(".f4_txt", { duration: .3, opacity: 0 });

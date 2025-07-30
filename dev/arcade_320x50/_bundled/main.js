@@ -107,8 +107,14 @@ var theme1 = {
 	t2: 2
 };
 
+var arcade = {
+	t1: 1.8,
+	t2: 2
+};
+
 exports.games = games;
 exports.theme1 = theme1;
+exports.arcade = arcade;
 
 },{}],5:[function(require,module,exports){
 'use strict';
@@ -117,7 +123,7 @@ var _commonJsReadsJs = require('../../_common/js/reads.js');
 
 var _commonJsMobileJs = require('../../_common/js/mobile.js');
 
-(0, _commonJsMobileJs.init)(_commonJsReadsJs.games);
+(0, _commonJsMobileJs.init)(_commonJsReadsJs.arcade);
 
 },{"../../_common/js/mobile.js":2,"../../_common/js/reads.js":4}]},{},[5])
 

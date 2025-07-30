@@ -1,6 +1,6 @@
 import {olg} from '../../_common/js/proline.js'
 import {commonInit} from '../../_common/js/common.js'
-import {games} from '../../_common/js/reads.js'
+import {arcade} from '../../_common/js/reads.js'
 
  
 
@@ -23,12 +23,12 @@ function init(){
 
 	tl.from(".f2_txt", {duration:.3, opacity:0})
 
-	tl.add("f3", 	`+=${games.t1}`)
+	tl.add("f3", 	`+=${arcade.t1}`)
 	tl.to(".f2_txt", {duration:.3, opacity:0}, "f3")
 	tl.from(".f3_txt", {duration:.3, opacity:0})
 
 
-	tl.add("f4", `+=${games.t2}`)
+	tl.add("f4", `+=${arcade.t2}`)
 	tl.to(".f3_txt", {duration:.3, opacity:0}, "f4")
 
 	

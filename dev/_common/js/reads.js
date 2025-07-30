@@ -8,4 +8,10 @@ const theme1 = {
 	t2:2
 }
 
-export { games, theme1 }
+
+const arcade = {
+	t1: 1.8,
+	t2:2
+}
+
+export { games, theme1, arcade }

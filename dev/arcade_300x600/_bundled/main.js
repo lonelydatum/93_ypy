@@ -4,6 +4,47 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+
+var _proline = require("./proline");
+
+var _common = require("./common");
+
+function start(obj) {
+
+	var tl = (0, _common.commonInit)();
+
+	tl.add("f2", "+=.1");
+	var ok = ["300x250"];
+	if (ok.includes(universalBanner.size)) {
+		tl.from([".f2_device", ".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], { duration: .5, opacity: 0 }, "f2");
+		tl.to([".f1_device", ".f1_txt_1", ".f1_txt_2", ".f1_txt_3"], { duration: .5, opacity: 0 }, "f2");
+	}
+
+	tl.from(".f2_txt", { duration: .5, opacity: 0 }, "f2");
+
+	tl.add("f3", "+=" + obj.t1);
+	tl.to(".f2_txt", { duration: .3, opacity: 0 }, "f3");
+	tl.from(".f3_txt", { duration: .3, opacity: 0 });
+
+	tl.add("f4", "+=" + obj.t2);
+	tl.to(".f3_txt", { duration: .3, opacity: 0 }, "f4");
+
+	tl.from(".f4_txt", { duration: .3, opacity: 0 });
+	tl.from(".f4_cta", { duration: .3, opacity: 0 });
+
+	tl.add((0, _proline.olg)());
+
+	return tl;
+}
+
+exports.start = start;
+
+},{"./common":2,"./proline":3}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 function commonInit() {
 	var tl = new TimelineMax({ onComplete: function onComplete() {
 			if (document.getElementById("legalBtn")) {
@@ -21,7 +62,7 @@ function commonInit() {
 
 exports.commonInit = commonInit;
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59,7 +100,7 @@ var w = bannerSize.w;
 var h = bannerSize.h;
 exports.olg = olg;
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -75,60 +116,40 @@ var theme1 = {
 	t2: 2
 };
 
+var arcade = {
+	t1: 1.8,
+	t2: 2
+};
+
 exports.games = games;
 exports.theme1 = theme1;
+exports.arcade = arcade;
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
-
-var _proline = require("./proline");
-
-var _common = require("./common");
 
 var _reads = require("./reads");
 
+var _games_arcadeJs = require("./_games_arcade.js");
+
 function init() {
-
-	var tl = (0, _common.commonInit)();
-
-	tl.add("f2", "+=.1");
-	var ok = ["300x250"];
-	if (ok.includes(universalBanner.size)) {
-		tl.from([".f2_device", ".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], { duration: .5, opacity: 0 }, "f2");
-		tl.to([".f1_device", ".f1_txt_1", ".f1_txt_2", ".f1_txt_3"], { duration: .5, opacity: 0 }, "f2");
-	}
-
-	tl.from(".f2_txt", { duration: .5, opacity: 0 }, "f2");
-
-	tl.add("f3", "+=" + _reads.games.t1);
-	tl.to(".f2_txt", { duration: .3, opacity: 0 }, "f3");
-	tl.from(".f3_txt", { duration: .3, opacity: 0 });
-
-	tl.add("f4", "+=" + _reads.games.t2);
-	tl.to(".f3_txt", { duration: .3, opacity: 0 }, "f4");
-
-	tl.from(".f4_txt", { duration: .3, opacity: 0 });
-	tl.from(".f4_cta", { duration: .3, opacity: 0 });
-
-	tl.add((0, _proline.olg)());
-
-	return tl;
+  return (0, _games_arcadeJs.start)(_reads.arcade);
 }
 
 exports.init = init;
 
-},{"./common":1,"./proline":2,"./reads":3}],5:[function(require,module,exports){
+},{"./_games_arcade.js":1,"./reads":4}],6:[function(require,module,exports){
 'use strict';
 
-var _commonJsYpy_gamesJs = require('../../_common/js/ypy_games.js');
+var _commonJsYpy_arcadeJs = require('../../_common/js/ypy_arcade.js');
 
-(0, _commonJsYpy_gamesJs.init)();
+(0, _commonJsYpy_arcadeJs.init)();
 
-},{"../../_common/js/ypy_games.js":4}]},{},[5])
+},{"../../_common/js/ypy_arcade.js":5}]},{},[6])
 
 
 //# sourceMappingURL=main.js.map

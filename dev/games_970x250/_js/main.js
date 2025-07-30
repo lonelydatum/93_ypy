@@ -1,5 +1,6 @@
 import {games} from '../../_common/js/reads.js'
 import {commonInit} from '../../_common/js/common.js'
+import {olg} from '../../_common/js/proline.js'
 
  
 
@@ -28,7 +29,7 @@ import {commonInit} from '../../_common/js/common.js'
 	tl.from(".f4_cta", {duration:.3, opacity:0})
 
 	
-
+tl.add(olg())
 	
 	
 	

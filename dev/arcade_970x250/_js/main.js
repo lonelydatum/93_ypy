@@ -8,7 +8,7 @@ import {commonInit} from '../../_common/js/common.js'
 	const tl = new commonInit()
 	
 	
-	tl.add("f2", "+=.5")
+	tl.add("f2", "+=.1")
 	
 	
 
