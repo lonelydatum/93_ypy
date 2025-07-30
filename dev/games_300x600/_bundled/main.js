@@ -65,16 +65,37 @@ exports.olg = olg;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+var games = {
+	t1: 1.8,
+	t2: 2.2
+};
+
+var theme1 = {
+	t1: 1.8,
+	t2: 2
+};
+
+exports.games = games;
+exports.theme1 = theme1;
+
+},{}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
 var _proline = require("./proline");
 
 var _common = require("./common");
 
+var _reads = require("./reads");
+
 function init() {
 
 	var tl = (0, _common.commonInit)();
 
-	tl.add("f2", "+=.5");
+	tl.add("f2", "+=.1");
 	var ok = ["300x250"];
 	if (ok.includes(universalBanner.size)) {
 		tl.from([".f2_device", ".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], { duration: .5, opacity: 0 }, "f2");
@@ -83,11 +104,11 @@ function init() {
 
 	tl.from(".f2_txt", { duration: .5, opacity: 0 }, "f2");
 
-	tl.add("f3", "+=1");
+	tl.add("f3", "+=" + _reads.games.t1);
 	tl.to(".f2_txt", { duration: .3, opacity: 0 }, "f3");
 	tl.from(".f3_txt", { duration: .3, opacity: 0 });
 
-	tl.add("f4", "+=1");
+	tl.add("f4", "+=" + _reads.games.t2);
 	tl.to(".f3_txt", { duration: .3, opacity: 0 }, "f4");
 
 	tl.from(".f4_txt", { duration: .3, opacity: 0 });
@@ -100,14 +121,14 @@ function init() {
 
 exports.init = init;
 
-},{"./common":1,"./proline":2}],4:[function(require,module,exports){
+},{"./common":1,"./proline":2,"./reads":3}],5:[function(require,module,exports){
 'use strict';
 
 var _commonJsYpy_gamesJs = require('../../_common/js/ypy_games.js');
 
 (0, _commonJsYpy_gamesJs.init)();
 
-},{"../../_common/js/ypy_games.js":3}]},{},[4])
+},{"../../_common/js/ypy_games.js":4}]},{},[5])
 
 
 //# sourceMappingURL=main.js.map

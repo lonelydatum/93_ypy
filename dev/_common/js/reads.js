@@ -1,6 +1,6 @@
 const games = {
-	t1: 1,
-	t2:2
+	t1: 1.8,
+	t2:2.2
 }
 
 const theme1 = {

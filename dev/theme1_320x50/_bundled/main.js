@@ -98,8 +98,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 var games = {
-	t1: 1,
-	t2: 2
+	t1: 1.8,
+	t2: 2.2
 };
 
 var theme1 = {
