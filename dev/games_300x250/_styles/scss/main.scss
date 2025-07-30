@@ -3,3 +3,9 @@
 
 
 
+
+
+.f1_device{
+	transform-origin: 50% 50%;
+	@include pos-scale(-150, -125, .5);
+}

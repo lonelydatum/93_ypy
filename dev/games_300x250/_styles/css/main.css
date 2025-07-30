@@ -257,4 +257,18 @@ svg {
   width: 74px;
 }
 
+.f1_device {
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translate(-150px, -125px) scale(0.5, 0.5);
+  -ms-transform: translate(-150px, -125px) scale(0.5, 0.5);
+  transform: translate(-150px, -125px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
 /*# sourceMappingURL=main.css.map */

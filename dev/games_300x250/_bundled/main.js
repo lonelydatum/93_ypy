@@ -79,56 +79,46 @@ exports.games = games;
 exports.theme1 = theme1;
 
 },{}],4:[function(require,module,exports){
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+var _commonJsProlineJs = require('../../_common/js/proline.js');
 
-var _proline = require("./proline");
+var _commonJsCommonJs = require('../../_common/js/common.js');
 
-var _common = require("./common");
-
-var _reads = require("./reads");
+var _commonJsReadsJs = require('../../_common/js/reads.js');
 
 function init() {
 
-	var tl = (0, _common.commonInit)();
+	var tl = (0, _commonJsCommonJs.commonInit)();
+
+	// translate(-150px, -150px) scale(0.42)
 
 	tl.add("f2", "+=.1");
-	var ok = ["300x250"];
-	if (ok.includes(universalBanner.size)) {
-		tl.from([".f2_device", ".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], { duration: .5, opacity: 0 }, "f2");
-		tl.to([".f1_device", ".f1_txt_1", ".f1_txt_2", ".f1_txt_3"], { duration: .5, opacity: 0 }, "f2");
-	}
+	tl.to([".f1_device"], { duration: .3, scale: .39, y: -159 }, "f2");
 
-	tl.from(".f2_txt", { duration: .5, opacity: 0 }, "f2");
+	tl.from([".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], { duration: .3, opacity: 0 }, "f2");
+	tl.to([".f1_txt_1", ".f1_txt_2", ".f1_txt_3"], { duration: .3, opacity: 0 }, "f2");
 
-	tl.add("f3", "+=" + _reads.games.t1);
+	tl.from(".f2_txt", { duration: .3, opacity: 0 });
+
+	tl.add("f3", '+=' + _commonJsReadsJs.games.t1);
 	tl.to(".f2_txt", { duration: .3, opacity: 0 }, "f3");
 	tl.from(".f3_txt", { duration: .3, opacity: 0 });
 
-	tl.add("f4", "+=" + _reads.games.t2);
+	tl.add("f4", '+=' + _commonJsReadsJs.games.t2);
 	tl.to(".f3_txt", { duration: .3, opacity: 0 }, "f4");
 
 	tl.from(".f4_txt", { duration: .3, opacity: 0 });
 	tl.from(".f4_cta", { duration: .3, opacity: 0 });
 
-	tl.add((0, _proline.olg)());
+	tl.add((0, _commonJsProlineJs.olg)());
 
 	return tl;
 }
 
-exports.init = init;
+init();
 
-},{"./common":1,"./proline":2,"./reads":3}],5:[function(require,module,exports){
-'use strict';
-
-var _commonJsYpy_gamesJs = require('../../_common/js/ypy_games.js');
-
-(0, _commonJsYpy_gamesJs.init)();
-
-},{"../../_common/js/ypy_games.js":4}]},{},[5])
+},{"../../_common/js/common.js":1,"../../_common/js/proline.js":2,"../../_common/js/reads.js":3}]},{},[4])
 
 
 //# sourceMappingURL=main.js.map
