@@ -103,7 +103,7 @@ var games = {
 };
 
 var theme1 = {
-	t1: 1,
+	t1: 1.8,
 	t2: 2
 };
 
