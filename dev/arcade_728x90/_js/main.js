@@ -1,7 +1,7 @@
 import {commonInit} from '../../_common/js/common.js'
 import {arcade} from '../../_common/js/reads.js'
 
- 
+ import {olg} from '../../_common/js/proline.js'
 
 
 function init(){	
@@ -29,7 +29,7 @@ function init(){
 	tl.from(".f4_cta", {duration:.3, opacity:0})
 
 	
-
+	tl.add(olg())
 	
 	
 	

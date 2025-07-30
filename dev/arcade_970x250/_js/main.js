@@ -1,5 +1,6 @@
 import {games} from '../../_common/js/reads.js'
 import {commonInit} from '../../_common/js/common.js'
+import {olg} from '../../_common/js/proline.js'
 
  
 
@@ -32,3 +33,4 @@ import {commonInit} from '../../_common/js/common.js'
 	
 	
 	
+tl.add(olg())
