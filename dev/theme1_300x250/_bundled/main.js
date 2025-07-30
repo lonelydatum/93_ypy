@@ -97,13 +97,13 @@ function init() {
 	tl.add("f2", "+=.5");
 	var ok = ["300x250", "160x600", "300x600"];
 	if (ok.includes(universalBanner.size)) {
-		tl.from([".f2_hero", ".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], { duration: .3, opacity: 0 }, "f2");
-		tl.to(".f1", { duration: .5, opacity: 0 }, "f2");
+		tl.from([".f2_hero", ".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], { duration: .1, opacity: 0 }, "f2");
+		// tl.to(".f1", {duration:.5, opacity:0}, "f2")
 	}
 
-	tl.from(".f2_device", { duration: .5, opacity: 0 }, "f2");
+	tl.from(".f2_device", { duration: .5, opacity: 0 }, "f2+=.2");
 
-	tl.from(".f2_txt", { duration: .5, opacity: 0 }, "f2");
+	tl.from(".f2_txt", { duration: .5, opacity: 0 }, "f2+=.2");
 
 	tl.add("f3", "+=" + _reads.theme1.t1);
 	tl.to(".f2_txt", { duration: .3, opacity: 0 }, "f3");
