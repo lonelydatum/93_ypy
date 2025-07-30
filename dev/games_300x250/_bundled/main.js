@@ -93,7 +93,7 @@ function init() {
 
 	// translate(-150px, -150px) scale(0.42)
 
-	tl.add("f2", "+=.1");
+	tl.add("f2", "+=.5");
 	tl.to([".f1_device"], { duration: .3, scale: .39, y: -159 }, "f2");
 
 	tl.from([".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], { duration: .3, opacity: 0 }, "f2");
