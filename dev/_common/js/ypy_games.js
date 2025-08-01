@@ -1,15 +1,9 @@
-import {games} from "./reads"
+import { games } from "./reads";
 
+import { start } from "./_games_arcade.js";
 
-
-
-
-
-function init(){	
-	return start(games)
+function init() {
+  return start(games);
 }
 
-
- 
-
-export { init  }
+export { init };

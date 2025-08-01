@@ -1,0 +1,7 @@
+import {theme1} from '../../_common/js/reads.js'
+import {init} from '../../_common/js/mobile.js'
+
+
+
+
+init(theme1)

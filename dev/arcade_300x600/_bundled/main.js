@@ -104,26 +104,32 @@ exports.olg = olg;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 var games = {
-	t1: 1.8,
-	t2: 2.2
+  t1: 1.8,
+  t2: 2.2
 };
 
 var theme1 = {
-	t1: 1.8,
-	t2: 2
+  t1: 1.8,
+  t2: 2
 };
 
 var arcade = {
-	t1: 1.8,
-	t2: 2
+  t1: 1.8,
+  t2: 2
+};
+
+var theme2 = {
+  t1: 0.5,
+  t2: 1.5
 };
 
 exports.games = games;
 exports.theme1 = theme1;
 exports.arcade = arcade;
+exports.theme2 = theme2;
 
 },{}],5:[function(require,module,exports){
 "use strict";

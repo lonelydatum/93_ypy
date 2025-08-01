@@ -25,30 +25,35 @@ exports.commonInit = commonInit;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _commonJs = require("./common.js");
 
-var _prolineJs = require('./proline.js');
+var _prolineJs = require("./proline.js");
 
 function init(obj) {
-	var tl = (0, _commonJs.commonInit)();
+  var tl = (0, _commonJs.commonInit)();
 
-	tl.add("f2", "+=.5");
-	tl.to(".f1", { duration: .5, opacity: 0 }, "f2");
-	tl.from(".f2_txt", { duration: .4, opacity: 0 });
+  tl.add("f2", "+=.5");
+  tl.to(".f1", { duration: 0.5, opacity: 0 }, "f2");
+  tl.from(".f2_txt", { duration: 0.4, opacity: 0 });
+  tl.add("f3", "+=" + obj.t1);
+  if (universalBanner.name === "theme2") {
+    tl.from(".f3_txt", { duration: 0.4, opacity: 0 }, "f3");
+    tl.add("f4", "+=" + obj.t2);
+    tl.to(".f2_txt", { duration: 0.4, opacity: 0 }, "f4");
+  } else {
+    tl.to(".f2_txt", { duration: 0.4, opacity: 0 }, "f3");
+    tl.from(".f3_txt", { duration: 0.4, opacity: 0 });
+    tl.add("f4", "+=" + obj.t2);
+  }
 
-	tl.add("f3", "+=" + obj.t1);
-	tl.to(".f2_txt", { duration: .4, opacity: 0 }, "f3");
-	tl.from(".f3_txt", { duration: .4, opacity: 0 });
+  tl.to(".f3_txt", { duration: 0.4, opacity: 0 }, "f4");
+  tl.from(".f4_txt", { duration: 0.4, opacity: 0 });
+  tl.from(".f4_cta", { duration: 0.4, opacity: 0 });
 
-	tl.add("f4", "+=" + obj.t2);
-	tl.to(".f3_txt", { duration: .4, opacity: 0 }, "f4");
-	tl.from(".f4_txt", { duration: .4, opacity: 0 });
-	tl.from(".f4_cta", { duration: .4, opacity: 0 });
-
-	tl.add((0, _prolineJs.olg)());
+  tl.add((0, _prolineJs.olg)());
 }
 
 exports.init = init;
@@ -95,26 +100,32 @@ exports.olg = olg;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 var games = {
-	t1: 1.8,
-	t2: 2.2
+  t1: 1.8,
+  t2: 2.2
 };
 
 var theme1 = {
-	t1: 1.8,
-	t2: 2
+  t1: 1.8,
+  t2: 2
 };
 
 var arcade = {
-	t1: 1.8,
-	t2: 2
+  t1: 1.8,
+  t2: 2
+};
+
+var theme2 = {
+  t1: 0.5,
+  t2: 1.5
 };
 
 exports.games = games;
 exports.theme1 = theme1;
 exports.arcade = arcade;
+exports.theme2 = theme2;
 
 },{}],5:[function(require,module,exports){
 'use strict';
