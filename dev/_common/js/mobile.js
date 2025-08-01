@@ -19,6 +19,13 @@ function init(obj) {
     tl.add("f4", `+=${obj.t2}`);
   }
 
+  if (universalBanner.name === "safety") {
+    tl.from("._spark", { duration: 0.5, opacity: 0 }, "f2");
+  }
+  if (universalBanner.name === "safety") {
+    tl.to("._spark", { duration: 0.5, opacity: 0 }, "f4");
+  }
+
   tl.to(".f3_txt", { duration: 0.4, opacity: 0 }, "f4");
   tl.from(".f4_txt", { duration: 0.4, opacity: 0 });
   tl.from(".f4_cta", { duration: 0.4, opacity: 0 });

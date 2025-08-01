@@ -2,21 +2,24 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 function commonInit() {
-	var tl = new TimelineMax({ onComplete: function onComplete() {
-			if (document.getElementById("legalBtn")) {
-				TweenLite.set("#legalBtn", { display: "block" });
-			}
-		} });
+  var tl = new TimelineMax({
+    onComplete: function onComplete() {
+      if (document.getElementById("legalBtn")) {
+        TweenLite.to(".f4_legal", { opacity: 1 });
+        TweenLite.set("#legalBtn", { display: "block" });
+      }
+    }
+  });
+  tl.set(".f4_legal", { opacity: 0 });
+  tl.set(".frame1", { opacity: 1 });
+  tl.from(".f1_txt_1", { duration: 0.4, opacity: 0, y: "-=100" });
+  tl.from(".f1_txt_2", { duration: 0.4, opacity: 0, y: "-=100" }, "-=.2");
+  tl.from(".f1_txt_3", { duration: 0.4, opacity: 0, y: "-=100" }, "-=.2");
 
-	tl.set(".frame1", { opacity: 1 });
-	tl.from(".f1_txt_1", { duration: .4, opacity: 0, y: "-=100" });
-	tl.from(".f1_txt_2", { duration: .4, opacity: 0, y: "-=100" }, "-=.2");
-	tl.from(".f1_txt_3", { duration: .4, opacity: 0, y: "-=100" }, "-=.2");
-
-	return tl;
+  return tl;
 }
 
 exports.commonInit = commonInit;
@@ -47,6 +50,13 @@ function init(obj) {
     tl.to(".f2_txt", { duration: 0.4, opacity: 0 }, "f3");
     tl.from(".f3_txt", { duration: 0.4, opacity: 0 });
     tl.add("f4", "+=" + obj.t2);
+  }
+
+  if (universalBanner.name === "safety") {
+    tl.from("._spark", { duration: 0.5, opacity: 0 }, "f2");
+  }
+  if (universalBanner.name === "safety") {
+    tl.to("._spark", { duration: 0.5, opacity: 0 }, "f4");
   }
 
   tl.to(".f3_txt", { duration: 0.4, opacity: 0 }, "f4");

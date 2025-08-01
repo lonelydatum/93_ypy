@@ -20,6 +20,10 @@ function init() {
 
   tl.from(".f2_txt", { duration: 0.5, opacity: 0 }, "f2+=.2");
 
+  if (universalBanner.name === "safety") {
+    tl.from("._spark", { duration: 0.5, opacity: 0 }, "f2+=.2");
+  }
+
   tl.add("f3", `+=${theme1.t1}`);
   tl.to(".f2_txt", { duration: 0.3, opacity: 0 }, "f3");
 
@@ -28,6 +32,9 @@ function init() {
   tl.add("f4", `+=${theme1.t2}`);
   tl.to(".f2_device", { duration: 0.5, opacity: 0 }, "f4");
   tl.to(".f3_txt", { duration: 0.3, opacity: 0 }, "f4");
+  if (universalBanner.name === "safety") {
+    tl.to("._spark", { duration: 0.5, opacity: 0 }, "f4");
+  }
 
   tl.from(".f4_bg", { duration: 0.3, opacity: 0 }, "f4");
 
