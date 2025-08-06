@@ -3,7 +3,7 @@ import { theme2 } from "./reads";
 
 import { commonInit } from "./common";
 
-function init() {
+function init(time = theme2) {
   const tl = commonInit();
 
   tl.add("f2", "+=.5");
@@ -20,10 +20,10 @@ function init() {
 
   tl.from(".f2_txt", { duration: 0.5, opacity: 0 }, "f2+=.2");
 
-  tl.add("f3", `+=${theme2.t1}`);
+  tl.add("f3", `+=${time.t1}`);
   tl.from(".f3_txt", { duration: 0.3, opacity: 0 }, "f3");
 
-  tl.add("f4", `+=${theme2.t2}`);
+  tl.add("f4", `+=${time.t2}`);
   tl.to(".f2_device", { duration: 0.5, opacity: 0 }, "f4");
   tl.to(".f3_txt", { duration: 0.3, opacity: 0 }, "f4");
   tl.to(".f2_txt", { duration: 0.3, opacity: 0 }, "f4");

@@ -5,6 +5,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 function commonInit() {
+  var legal = {
+    arcade: "©2025 Pragmatic Play. All rights reserved. \n©2025 Games Global. All rights reserved. \nMust be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.\n",
+    games: "©2025 IGT. \n©2025 Pragmatic Play.\nAll rights reserved. ©2025 Evolution. \nAll rights reserved. Must be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.\n",
+    progressive: "© 2025 IGT. \n©2025 Califon Productions, Inc. \nMust be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.\n",
+    safety: "©2025 IGT.\nMust be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. \nGames may not appear as shown.\nOdds vary by game. Terms and conditions apply.\n*Voted most trusted Online Casino by Ontario shoppers based on the 2025 Brandspark® Canadian Trust Study.\n",
+    theme1: "©2025 Light & Wonder. All rights reserved.\n©2025 AGS. All rights reserved. <br/>Must be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.",
+    theme2: "©2025 Evolution. All rights reserved. \n©2025 Pragmatic Play. All rights reserved. \nMust be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.\n"
+  };
+
+  var legalContent = document.getElementById("legalContent");
+  legalContent.innerHTML = legal[universalBanner.name];
+
   var tl = new TimelineMax({
     onComplete: function onComplete() {
       if (document.getElementById("legalBtn")) {
@@ -79,8 +91,8 @@ var theme1 = {
 };
 
 var arcade = {
-  t1: 1.8,
-  t2: 2
+  t1: 2,
+  t2: 2.5
 };
 
 var theme2 = {
@@ -88,44 +100,50 @@ var theme2 = {
   t2: 1.5
 };
 
+var progressive = {
+  t1: 2,
+  t2: 1.5
+};
+
 exports.games = games;
 exports.theme1 = theme1;
 exports.arcade = arcade;
 exports.theme2 = theme2;
+exports.progressive = progressive;
 
 },{}],4:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _commonJsProlineJs = require('../../_common/js/proline.js');
+var _commonJsProlineJs = require("../../_common/js/proline.js");
 
-var _commonJsCommonJs = require('../../_common/js/common.js');
+var _commonJsCommonJs = require("../../_common/js/common.js");
 
-var _commonJsReadsJs = require('../../_common/js/reads.js');
+var _commonJsReadsJs = require("../../_common/js/reads.js");
 
 function init() {
+  var tl = (0, _commonJsCommonJs.commonInit)();
 
-	var tl = (0, _commonJsCommonJs.commonInit)();
+  // translate(-150px, -150px) scale(0.42)
 
-	// translate(-150px, -150px) scale(0.42)
+  tl.add("f2", "+=.1");
+  tl.to([".f1_device"], { duration: 0.3, scale: 0.42, y: -150 }, "f2");
 
-	tl.add("f2", "+=.1");
-	tl.to([".f1_device"], { duration: .3, scale: .42, y: -150 }, "f2");
+  tl.from(".f2_txt", { duration: 0.3, opacity: 0 });
 
-	tl.from(".f2_txt", { duration: .3, opacity: 0 });
+  tl.add("f3", "+=" + _commonJsReadsJs.progressive.t1);
 
-	tl.add("f3", '+=' + _commonJsReadsJs.arcade.t1);
-	tl.to(".f2_txt", { duration: .3, opacity: 0 }, "f3");
-	tl.from(".f3_txt", { duration: .3, opacity: 0 });
+  tl.from(".f3_txt", { duration: 0.3, opacity: 0 }, "f3");
 
-	tl.add("f4", '+=' + _commonJsReadsJs.arcade.t2);
-	tl.to(".f3_txt", { duration: .3, opacity: 0 }, "f4");
+  tl.add("f4", "+=" + _commonJsReadsJs.progressive.t2);
+  tl.to(".f3_txt", { duration: 0.3, opacity: 0 }, "f4");
+  tl.to(".f2_txt", { duration: 0.3, opacity: 0 }, "f4");
 
-	tl.from(".f4_txt", { duration: .3, opacity: 0 });
-	tl.from(".f4_cta", { duration: .3, opacity: 0 });
+  tl.from(".f4_txt", { duration: 0.3, opacity: 0 });
+  tl.from(".f4_cta", { duration: 0.3, opacity: 0 });
 
-	tl.add((0, _commonJsProlineJs.olg)());
+  tl.add((0, _commonJsProlineJs.olg)());
 
-	return tl;
+  return tl;
 }
 
 init();

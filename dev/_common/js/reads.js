@@ -9,8 +9,8 @@ const theme1 = {
 };
 
 const arcade = {
-  t1: 1.8,
-  t2: 2,
+  t1: 2,
+  t2: 2.5,
 };
 
 const theme2 = {
@@ -18,4 +18,9 @@ const theme2 = {
   t2: 1.5,
 };
 
-export { games, theme1, arcade, theme2 };
+const progressive = {
+  t1: 2,
+  t2: 1.5,
+};
+
+export { games, theme1, arcade, theme2, progressive };

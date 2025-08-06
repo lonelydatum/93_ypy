@@ -1,36 +1,22 @@
-import {games} from '../../_common/js/reads.js'
-import {commonInit} from '../../_common/js/common.js'
-import {olg} from '../../_common/js/proline.js'
+import { progressive } from "../../_common/js/reads.js";
+import { commonInit } from "../../_common/js/common.js";
+import { olg } from "../../_common/js/proline.js";
 
- 
+const tl = new commonInit();
 
+tl.add("f2", "+=.1");
 
+tl.from(".f2_txt", { duration: 0.5, opacity: 0 }, "f2");
 
-	const tl = new commonInit()
-	
-	
-	tl.add("f2", "+=.1")
-	
-	
+tl.add("f3", `+=${progressive.t1}`);
 
-	tl.from(".f2_txt", {duration:.5, opacity:0}, "f2")
+tl.from(".f3_txt", { duration: 0.3, opacity: 0 }, "f3");
 
-	tl.add("f3", `+=${games.t1}`)
-	tl.to(".f2_txt", {duration:.3, opacity:0}, "f3")
-	tl.from(".f3_txt", {duration:.3, opacity:0})
+tl.add("f4", `+=${progressive.t2}`);
+tl.to([".f3_txt"], { duration: 0.3, opacity: 0 }, "f4");
+tl.to(".f2_txt", { duration: 0.3, opacity: 0 }, "f4");
 
+tl.from(".f4_txt", { duration: 0.3, opacity: 0 });
+tl.from(".f4_cta", { duration: 0.3, opacity: 0 });
 
-	tl.add("f4", `+=${games.t2}`)
-	tl.to([".f3_txt"], {duration:.3, opacity:0}, "f4")
-	
-
-	
-	tl.from(".f4_txt", {duration:.3, opacity:0})
-	tl.from(".f4_cta", {duration:.3, opacity:0})
-
-	
-
-	
-	
-	
-tl.add(olg())
+tl.add(olg());

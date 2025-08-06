@@ -10,17 +10,6 @@ function init() {
   tl.add("f2", "+=.5");
   tl.to([".f1_device"], { duration: 0.3, scale: 0.39, y: -159 }, "f2");
 
-  tl.from(
-    [".f2_txt_1", ".f2_txt_2", ".f2_txt_3"],
-    { duration: 0.3, opacity: 0 },
-    "f2"
-  );
-  tl.to(
-    [".f1_txt_1", ".f1_txt_2", ".f1_txt_3"],
-    { duration: 0.3, opacity: 0 },
-    "f2"
-  );
-
   tl.from(".f2_txt", { duration: 0.3, opacity: 0 });
 
   tl.add("f3", `+=${games.t1}`);

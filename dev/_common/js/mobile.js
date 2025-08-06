@@ -9,7 +9,10 @@ function init(obj) {
   tl.to(".f1", { duration: 0.5, opacity: 0 }, "f2");
   tl.from(".f2_txt", { duration: 0.4, opacity: 0 });
   tl.add("f3", `+=${obj.t1}`);
-  if (universalBanner.name === "theme2") {
+  if (
+    universalBanner.name === "theme2" ||
+    universalBanner.name === "progressive"
+  ) {
     tl.from(".f3_txt", { duration: 0.4, opacity: 0 }, "f3");
     tl.add("f4", `+=${obj.t2}`);
     tl.to(".f2_txt", { duration: 0.4, opacity: 0 }, "f4");
