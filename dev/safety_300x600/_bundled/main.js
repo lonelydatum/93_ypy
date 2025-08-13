@@ -105,11 +105,17 @@ var progressive = {
   t2: 1.5
 };
 
+var safety = {
+  t1: 2.2,
+  t2: 1.8
+};
+
 exports.games = games;
 exports.theme1 = theme1;
 exports.arcade = arcade;
 exports.theme2 = theme2;
 exports.progressive = progressive;
+exports.safety = safety;
 
 },{}],4:[function(require,module,exports){
 "use strict";
@@ -125,6 +131,8 @@ var _reads = require("./reads");
 var _common = require("./common");
 
 function init() {
+  var time = arguments.length <= 0 || arguments[0] === undefined ? _reads.theme1 : arguments[0];
+
   var tl = (0, _common.commonInit)();
 
   tl.add("f2", "+=.5");
@@ -141,14 +149,14 @@ function init() {
     tl.from("._spark", { duration: 0.5, opacity: 0 }, "f2+=.2");
   }
 
-  tl.add("f3", "+=" + _reads.theme1.t1);
-  tl.to(".f2_txt", { duration: 0.3, opacity: 0 }, "f3");
+  tl.add("f3", "+=" + time.t1);
 
-  tl.from(".f3_txt", { duration: 0.3, opacity: 0 });
+  tl.from(".f3_txt", { duration: 0.3, opacity: 0 }, "f3");
 
-  tl.add("f4", "+=" + _reads.theme1.t2);
+  tl.add("f4", "+=" + time.t2);
   tl.to(".f2_device", { duration: 0.5, opacity: 0 }, "f4");
   tl.to(".f3_txt", { duration: 0.3, opacity: 0 }, "f4");
+  tl.to(".f2_txt", { duration: 0.3, opacity: 0 }, "f4");
   if (universalBanner.name === "safety") {
     tl.to("._spark", { duration: 0.5, opacity: 0 }, "f4");
   }
@@ -167,13 +175,15 @@ function init() {
 exports.init = init;
 
 },{"./common":1,"./proline":2,"./reads":3}],5:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _commonJsYpy_theme1Js = require('../../_common/js/ypy_theme1.js');
+var _commonJsYpy_theme1Js = require("../../_common/js/ypy_theme1.js");
 
-(0, _commonJsYpy_theme1Js.init)();
+var _commonJsReadsJs = require("../../_common/js/reads.js");
 
-},{"../../_common/js/ypy_theme1.js":4}]},{},[5])
+(0, _commonJsYpy_theme1Js.init)(_commonJsReadsJs.safety);
+
+},{"../../_common/js/reads.js":3,"../../_common/js/ypy_theme1.js":4}]},{},[5])
 
 
 //# sourceMappingURL=main.js.map

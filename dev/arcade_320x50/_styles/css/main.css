@@ -252,10 +252,11 @@ svg {
   display: none;
 }
 
-#svg_move, #svg_idle {
-  -webkit-transform: translate(-5px, 15px);
-  -ms-transform: translate(-5px, 15px);
-  transform: translate(-5px, 15px);
+#svg_move,
+#svg_idle {
+  -webkit-transform: translate(-5px, 14px);
+  -ms-transform: translate(-5px, 14px);
+  transform: translate(-5px, 14px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

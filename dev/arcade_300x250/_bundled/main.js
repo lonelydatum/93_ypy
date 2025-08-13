@@ -105,11 +105,17 @@ var progressive = {
   t2: 1.5
 };
 
+var safety = {
+  t1: 2.2,
+  t2: 1.8
+};
+
 exports.games = games;
 exports.theme1 = theme1;
 exports.arcade = arcade;
 exports.theme2 = theme2;
 exports.progressive = progressive;
+exports.safety = safety;
 
 },{}],4:[function(require,module,exports){
 'use strict';

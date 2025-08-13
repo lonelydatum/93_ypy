@@ -54,7 +54,7 @@ function init(obj) {
   tl.to(".f1", { duration: 0.5, opacity: 0 }, "f2");
   tl.from(".f2_txt", { duration: 0.4, opacity: 0 });
   tl.add("f3", "+=" + obj.t1);
-  if (universalBanner.name === "theme2" || universalBanner.name === "progressive") {
+  if (universalBanner.name === "theme1" || universalBanner.name === "theme2" || universalBanner.name === "progressive") {
     tl.from(".f3_txt", { duration: 0.4, opacity: 0 }, "f3");
     tl.add("f4", "+=" + obj.t2);
     tl.to(".f2_txt", { duration: 0.4, opacity: 0 }, "f4");
@@ -149,11 +149,17 @@ var progressive = {
   t2: 1.5
 };
 
+var safety = {
+  t1: 2.2,
+  t2: 1.8
+};
+
 exports.games = games;
 exports.theme1 = theme1;
 exports.arcade = arcade;
 exports.theme2 = theme2;
 exports.progressive = progressive;
+exports.safety = safety;
 
 },{}],5:[function(require,module,exports){
 'use strict';
@@ -162,7 +168,7 @@ var _commonJsReadsJs = require('../../_common/js/reads.js');
 
 var _commonJsMobileJs = require('../../_common/js/mobile.js');
 
-(0, _commonJsMobileJs.init)(_commonJsReadsJs.theme1);
+(0, _commonJsMobileJs.init)(_commonJsReadsJs.safety);
 
 },{"../../_common/js/mobile.js":2,"../../_common/js/reads.js":4}]},{},[5])
 

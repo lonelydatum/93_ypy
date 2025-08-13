@@ -17,12 +17,13 @@ function init(){
 	tl.from(".f2_txt", {duration:.5, opacity:0}, "f2")
 
 	tl.add("f3", `+=${games.t1}`)
-	tl.to(".f2_txt", {duration:.3, opacity:0}, "f3")
-	tl.from(".f3_txt", {duration:.3, opacity:0})
+	
+	tl.from(".f3_txt", {duration:.3, opacity:0}, "f3")
 
 
 	tl.add("f4", `+=${games.t2}`)
 	tl.to([".f3_txt", ".f1_txt_1", ".f1_txt_2", ".f1_txt_3"], {duration:.3, opacity:0}, "f4")
+	tl.to(".f2_txt", {duration:.3, opacity:0}, "f4")
 	tl.to(".f1_device", {duration:.3, x:"+=50"})
 
 	

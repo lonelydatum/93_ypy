@@ -105,11 +105,17 @@ var progressive = {
   t2: 1.5
 };
 
+var safety = {
+  t1: 2.2,
+  t2: 1.8
+};
+
 exports.games = games;
 exports.theme1 = theme1;
 exports.arcade = arcade;
 exports.theme2 = theme2;
 exports.progressive = progressive;
+exports.safety = safety;
 
 },{}],4:[function(require,module,exports){
 "use strict";
@@ -134,6 +140,7 @@ function init() {
   if (ok.includes(universalBanner.size)) {
     tl.from([".f2_hero", ".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], { duration: 0.1, opacity: 0 }, "f2");
   }
+  console.log(time);
 
   tl.from(".f2_device", { duration: 0.5, opacity: 0 }, "f2+=.2");
 

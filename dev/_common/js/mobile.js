@@ -10,6 +10,7 @@ function init(obj) {
   tl.from(".f2_txt", { duration: 0.4, opacity: 0 });
   tl.add("f3", `+=${obj.t1}`);
   if (
+    universalBanner.name === "theme1" ||
     universalBanner.name === "theme2" ||
     universalBanner.name === "progressive"
   ) {

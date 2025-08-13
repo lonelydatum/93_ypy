@@ -2,47 +2,6 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _proline = require("./proline");
-
-var _common = require("./common");
-
-function start(obj) {
-
-	var tl = (0, _common.commonInit)();
-
-	tl.add("f2", "+=.1");
-	var ok = ["300x250"];
-	if (ok.includes(universalBanner.size)) {
-		tl.from([".f2_device", ".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], { duration: .5, opacity: 0 }, "f2");
-		tl.to([".f1_device", ".f1_txt_1", ".f1_txt_2", ".f1_txt_3"], { duration: .5, opacity: 0 }, "f2");
-	}
-
-	tl.from(".f2_txt", { duration: .5, opacity: 0 }, "f2");
-
-	tl.add("f3", "+=" + obj.t1);
-	tl.to(".f2_txt", { duration: .3, opacity: 0 }, "f3");
-	tl.from(".f3_txt", { duration: .3, opacity: 0 });
-
-	tl.add("f4", "+=" + obj.t2);
-	tl.to(".f3_txt", { duration: .3, opacity: 0 }, "f4");
-
-	tl.from(".f4_txt", { duration: .3, opacity: 0 });
-	tl.from(".f4_cta", { duration: .3, opacity: 0 });
-
-	tl.add((0, _proline.olg)());
-
-	return tl;
-}
-
-exports.start = start;
-
-},{"./common":2,"./proline":3}],2:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
   value: true
 });
 function commonInit() {
@@ -77,7 +36,7 @@ function commonInit() {
 
 exports.commonInit = commonInit;
 
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -115,7 +74,7 @@ var w = bannerSize.w;
 var h = bannerSize.h;
 exports.olg = olg;
 
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -146,37 +105,78 @@ var progressive = {
   t2: 1.5
 };
 
+var safety = {
+  t1: 2.2,
+  t2: 1.8
+};
+
 exports.games = games;
 exports.theme1 = theme1;
 exports.arcade = arcade;
 exports.theme2 = theme2;
 exports.progressive = progressive;
+exports.safety = safety;
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _proline = require("./proline");
+
 var _reads = require("./reads");
 
-var _games_arcadeJs = require("./_games_arcade.js");
+var _common = require("./common");
 
 function init() {
-  return (0, _games_arcadeJs.start)(_reads.games);
+  var time = arguments.length <= 0 || arguments[0] === undefined ? _reads.theme2 : arguments[0];
+
+  var tl = (0, _common.commonInit)();
+
+  tl.add("f2", "+=.5");
+  var ok = ["300x250", "160x600", "300x600"];
+  if (ok.includes(universalBanner.size)) {
+    tl.from([".f2_hero", ".f2_txt_1", ".f2_txt_2", ".f2_txt_3"], { duration: 0.1, opacity: 0 }, "f2");
+  }
+  console.log(time);
+
+  tl.from(".f2_device", { duration: 0.5, opacity: 0 }, "f2+=.2");
+
+  tl.from(".f2_txt", { duration: 0.5, opacity: 0 }, "f2+=.2");
+
+  tl.add("f3", "+=" + time.t1);
+  tl.from(".f3_txt", { duration: 0.3, opacity: 0 }, "f3");
+
+  tl.add("f4", "+=" + time.t2);
+  tl.to(".f2_device", { duration: 0.5, opacity: 0 }, "f4");
+  tl.to(".f3_txt", { duration: 0.3, opacity: 0 }, "f4");
+  tl.to(".f2_txt", { duration: 0.3, opacity: 0 }, "f4");
+
+  tl.from(".f4_bg", { duration: 0.3, opacity: 0 }, "f4");
+
+  tl.from(".f4_device", { duration: 0.3, opacity: 0 });
+  tl.from(".f4_txt", { duration: 0.3, opacity: 0 });
+  tl.from(".f4_cta", { duration: 0.3, opacity: 0 });
+
+  tl.add((0, _proline.olg)());
+
+  return tl;
 }
 
 exports.init = init;
 
-},{"./_games_arcade.js":1,"./reads":4}],6:[function(require,module,exports){
+},{"./common":1,"./proline":2,"./reads":3}],5:[function(require,module,exports){
 'use strict';
 
-var _commonJsYpy_gamesJs = require('../../_common/js/ypy_games.js');
+var _commonJsYpy_theme2Js = require('../../_common/js/ypy_theme2.js');
 
-(0, _commonJsYpy_gamesJs.init)();
+var _commonJsReadsJs = require('../../_common/js/reads.js');
 
-},{"../../_common/js/ypy_games.js":5}]},{},[6])
+(0, _commonJsYpy_theme2Js.init)(_commonJsReadsJs.games);
+
+},{"../../_common/js/reads.js":3,"../../_common/js/ypy_theme2.js":4}]},{},[5])
 
 
 //# sourceMappingURL=main.js.map

@@ -242,10 +242,11 @@ svg {
   width: 72px;
 }
 
-#svg_move, #svg_idle {
-  -webkit-transform: translate(-11px, 532px);
-  -ms-transform: translate(-11px, 532px);
-  transform: translate(-11px, 532px);
+#svg_move,
+#svg_idle {
+  -webkit-transform: translate(-11px, 533px);
+  -ms-transform: translate(-11px, 533px);
+  transform: translate(-11px, 533px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

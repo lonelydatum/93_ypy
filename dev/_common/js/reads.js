@@ -23,4 +23,10 @@ const progressive = {
   t2: 1.5,
 };
 
-export { games, theme1, arcade, theme2, progressive };
+const safety = {
+  t1: 2.2,
+  t2: 1.8,
+};
+
+
+export { games, theme1, arcade, theme2, progressive, safety };
