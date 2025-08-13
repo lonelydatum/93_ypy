@@ -132,6 +132,7 @@ var _common = require("./common");
 
 function init() {
   var time = arguments.length <= 0 || arguments[0] === undefined ? _reads.theme1 : arguments[0];
+  var normal = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
 
   var tl = (0, _common.commonInit)();
 
@@ -142,7 +143,6 @@ function init() {
   }
 
   tl.from(".f2_device", { duration: 0.5, opacity: 0 }, "f2+=.2");
-
   tl.from(".f2_txt", { duration: 0.5, opacity: 0 }, "f2+=.2");
 
   if (universalBanner.name === "safety") {
@@ -151,12 +151,21 @@ function init() {
 
   tl.add("f3", "+=" + time.t1);
 
-  tl.from(".f3_txt", { duration: 0.3, opacity: 0 }, "f3");
+  if (normal) {
+    tl.from(".f3_txt", { duration: 0.3, opacity: 0 }, "f3");
+    tl.add("f4", "+=" + time.t2);
+    tl.to(".f2_device", { duration: 0.5, opacity: 0 }, "f4");
+    tl.to(".f3_txt", { duration: 0.3, opacity: 0 }, "f4");
+    tl.to(".f2_txt", { duration: 0.3, opacity: 0 }, "f4");
+  } else {
+    tl.to(".f2_txt", { duration: 0.3, opacity: 0 }, "f3");
 
-  tl.add("f4", "+=" + time.t2);
-  tl.to(".f2_device", { duration: 0.5, opacity: 0 }, "f4");
-  tl.to(".f3_txt", { duration: 0.3, opacity: 0 }, "f4");
-  tl.to(".f2_txt", { duration: 0.3, opacity: 0 }, "f4");
+    tl.from(".f3_txt", { duration: 0.3, opacity: 0 });
+    tl.add("f4", "+=" + time.t2);
+    tl.to(".f2_device", { duration: 0.5, opacity: 0 }, "f4");
+    tl.to(".f3_txt", { duration: 0.3, opacity: 0 }, "f4");
+  }
+
   if (universalBanner.name === "safety") {
     tl.to("._spark", { duration: 0.5, opacity: 0 }, "f4");
   }
@@ -177,13 +186,13 @@ exports.init = init;
 },{"./common":1,"./proline":2,"./reads":3}],5:[function(require,module,exports){
 "use strict";
 
-var _commonJsYpy_theme1Js = require("../../_common/js/ypy_theme1.js");
+var _commonJsYpy__Js = require("../../_common/js/ypy__.js");
 
 var _commonJsReadsJs = require("../../_common/js/reads.js");
 
-(0, _commonJsYpy_theme1Js.init)(_commonJsReadsJs.safety);
+(0, _commonJsYpy__Js.init)(_commonJsReadsJs.safety, false);
 
-},{"../../_common/js/reads.js":3,"../../_common/js/ypy_theme1.js":4}]},{},[5])
+},{"../../_common/js/reads.js":3,"../../_common/js/ypy__.js":4}]},{},[5])
 
 
 //# sourceMappingURL=main.js.map

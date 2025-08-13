@@ -1,3 +1,3 @@
-import { init } from "../../_common/js/ypy_theme1.js";
+import { init } from "../../_common/js/ypy__.js";
 import { safety } from "../../_common/js/reads.js";
-init(safety);
+init(safety, false);
