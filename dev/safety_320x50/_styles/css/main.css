@@ -248,10 +248,6 @@ svg {
   padding: 2px;
 }
 
-#legalContent br {
-  display: none;
-}
-
 #svg_move,
 #svg_idle {
   -webkit-transform: translate(-5px, 14px);
