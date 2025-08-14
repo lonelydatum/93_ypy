@@ -4,16 +4,16 @@ function commonInit() {
 ©2025 Games Global. All rights reserved. 
 Must be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.
 `,
-    games: `©2025 IGT. 
+    games: `©2025 IGT. </br>
 ©2025 Pragmatic Play.
 All rights reserved. ©2025 Evolution. 
 All rights reserved. Must be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.
 `,
-    progressive: `© 2025 IGT. 
+    progressive: `©2025 IGT. </br>
 ©2025 Califon Productions, Inc. 
 Must be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.
 `,
-    safety: `©2025 IGT.
+    safety: `©2025 IGT.</br>
 Must be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. 
 Games may not appear as shown.
 Odds vary by game. Terms and conditions apply.
